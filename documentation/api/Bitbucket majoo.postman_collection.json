@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "55993270-781c-49bc-9374-133190341a55",
+		"name": "Bitbucket majoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"joko\",\n    \"email\": \"jokorodo@gmail.com\",\n    \"address\": \"kalibata\",\n    \"phone\": 6281192389712,\n    \"password\":\"yoloyolo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"jokorodo@gmail.com\",\n    \"password\": \"yoloyolo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/users/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by id ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjp7ImlkIjoiZTAxYzI0NjItODY5ZC00MGU3LThhZmYtNDMwN2NhNjgxZGRkIiwibmFtZSI6Impva28iLCJlbWFpbCI6Impva29yb2RvQGdtYWlsLmNvbSIsImFkZHJlc3MiOiJrYWxpYmF0YSIsInBob25lIjoiNjI4MTE5MjM4OTcxMiIsInBhc3N3b3JkIjoiJDJhJDEwJFVYQXRGZEdIbHJYdEV1bXdPaTl3Si56NWVkS3ouajhlRERVVHROWUhpMU1iYi5mLzExT3BlIn0sImF1dGhvcml6ZWQiOnRydWUsImV4cCI6MTYzOTM5MjI5N30.Vdl9jra8uRQfMtOPhsCxEpQR94TOkZL6uWytu0X8LV0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/e01c2462-869d-40e7-8aff-4307ca681ddd",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"e01c2462-869d-40e7-8aff-4307ca681ddd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjp7ImlkIjoiZTAxYzI0NjItODY5ZC00MGU3LThhZmYtNDMwN2NhNjgxZGRkIiwibmFtZSI6Impva28iLCJlbWFpbCI6Impva29yb2RvQGdtYWlsLmNvbSIsImFkZHJlc3MiOiJrYWxpYmF0YSIsInBob25lIjoiNjI4MTE5MjM4OTcxMiIsInBhc3N3b3JkIjoiJDJhJDEwJFVYQXRGZEdIbHJYdEV1bXdPaTl3Si56NWVkS3ouajhlRERVVHROWUhpMU1iYi5mLzExT3BlIn0sImF1dGhvcml6ZWQiOnRydWUsImV4cCI6MTYzOTM5MjI5N30.Vdl9jra8uRQfMtOPhsCxEpQR94TOkZL6uWytu0X8LV0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/users/e01c2462-869d-40e7-8aff-4307ca681ddd",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"e01c2462-869d-40e7-8aff-4307ca681ddd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"chitato\",\n    \"deskripsi\": \"kripik kentang asli\",\n    \"price\": 10000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by paginate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/product?page=0&size=5",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/product/fbc5cdb5-817d-4a39-851c-455d53357d34",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"fbc5cdb5-817d-4a39-851c-455d53357d34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"31021697-0bca-4686-b8b7-23b8bcce9d79\",\n    \"name\": \"lays\",\n    \"deskripsi\": \"kripik singkong asli\",\n    \"price\": 10000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/product/31021697-0bca-4686-b8b7-23b8bcce9d79",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"product",
+								"31021697-0bca-4686-b8b7-23b8bcce9d79"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
